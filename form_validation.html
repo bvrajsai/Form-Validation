@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			margin: 0;
+			padding: 24px;
+			background: #f2f4f7;
+			font-family: Arial, sans-serif;
+		}
+
+		.registration-form {
+			width: min(100%, 400px);
+			padding: 32px;
+			border: 1px solid #d9dee7;
+			border-radius: 8px;
+			background: #ffffff;
+			box-shadow: 0 8px 24px rgba(20, 32, 50, 0.08);
+		}
+
+		h1 {
+			margin: 0 0 24px;
+			color: #1f2937;
+			font-size: 28px;
+			text-align: center;
+		}
+
+		.field {
+			margin-bottom: 16px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 6px;
+			color: #374151;
+			font-weight: 600;
+		}
+
+		input {
+			width: 100%;
+			padding: 11px 12px;
+			border: 1px solid #c9d1dc;
+			border-radius: 5px;
+			font-size: 16px;
+		}
+
+		input:focus {
+			border-color: #2563eb;
+			outline: 2px solid rgba(37, 99, 235, 0.2);
+		}
+
+		button {
+			width: 100%;
+			margin-top: 8px;
+			padding: 12px;
+			border: 0;
+			border-radius: 5px;
+			background: #2563eb;
+			color: #ffffff;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		button:hover {
+			background: #1d4ed8;
+		}
+
+		#form-message {
+			min-height: 20px;
+			margin: 16px 0 0;
+			color: #15803d;
+			text-align: center;
+		}
+
+		.error {
+			color: #b91c1c !important;
+		}
+	</style>
+</head>
+<body>
+	<form class="registration-form" id="registration-form" novalidate>
+		<h1>Create an Account</h1>
+
+		<div class="field">
+			<label for="username">Username</label>
+			<input type="text" id="username" name="username" autocomplete="username" required>
+		</div>
+
+		<div class="field">
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" autocomplete="email" required>
+		</div>
+
+		<div class="field">
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>
+		</div>
+
+		<button type="submit">Register</button>
+		<p id="form-message" role="status" aria-live="polite"></p>
+	</form>
+
+	<script src="validation.js"></script>
+</body>
+</html>
